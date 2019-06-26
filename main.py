@@ -11,7 +11,7 @@ from npchasery import *
 NUMPIXELS = 16
 neo = neopixel.NeoPixel(board.D5, NUMPIXELS, brightness=0.02, auto_write=False)
 
-
+#colours
 RED = (255,0,0)
 YELLOW = (255,255,0)
 GREEN = (0,255,0)
