@@ -1,8 +1,6 @@
 #npchasery.py
 # Neopixel chaser with yield (generators)
 
-
-
 NUMPIXELS = 16
 
 def y_fill(neo, start, end, color=(255,0,0), bgcolor=0):
@@ -22,10 +20,7 @@ def y_fill(neo, start, end, color=(255,0,0), bgcolor=0):
 
 def y_sweep_stack(neo, start=0, end=NUMPIXELS, color=(255,0,0), bgcolor=0):
     for stackPos in range(end,start,-1):
-        print("startPos:{}".format(stackPos))
-        
         for n in range(start,stackPos+1):
-            print("n:{}".format(n))
             neo[n]=color;
             yield n
             neo[n]=bgcolor
@@ -33,11 +28,8 @@ def y_sweep_stack(neo, start=0, end=NUMPIXELS, color=(255,0,0), bgcolor=0):
         neo[stackPos]=color        
 
         for x in range(stackPos-1,start-1,-1):
-            print("x:{}".format(x))
             neo[x]=color
             yield x
-            #neo.show()
-            #time.sleep(delay)
             neo[x]=bgcolor
             yield x
         neo[start]=color
@@ -45,9 +37,7 @@ def y_sweep_stack(neo, start=0, end=NUMPIXELS, color=(255,0,0), bgcolor=0):
 
 def y_sweep_stack_CW(neo, start=0, end=NUMPIXELS, color=(255,0,0), bgcolor=0):
     for stackPos in range(start,end):
-        print("startPos:{}".format(stackPos))
         for x in range(end,stackPos-1,-1):
-            print("x:{}".format(x))
             neo[x]=color
             yield x
             neo[x]=bgcolor
@@ -56,8 +46,7 @@ def y_sweep_stack_CW(neo, start=0, end=NUMPIXELS, color=(255,0,0), bgcolor=0):
         neo[x]=color        
         
         for n in range(stackPos+1,end+1):
-            print("n:{}".format(n))
-            neo[n]=color;
+            neo[n]=color
             yield n
             neo[n]=bgcolor
             yield n

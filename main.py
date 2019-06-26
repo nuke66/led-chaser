@@ -1,5 +1,4 @@
-# Write your code here :-)
-
+# Run a demo of the npchaser and npchasery led chaser functions.
 import board
 import neopixel
 import time
@@ -7,7 +6,6 @@ import time
 from npchaser import *
 from npchasery import *
 
-# fix this!  need to put all this into classes
 NUMPIXELS = 16
 neo = neopixel.NeoPixel(board.D5, NUMPIXELS, brightness=0.02, auto_write=False)
 
@@ -20,21 +18,14 @@ PURPLE = (153,0,153)
 WHITE = (255,255,255)
 PINK = (255,51,153)
 
-
-
-
-
 def run():
-    print("lightshow()")
+    print("\nNeopixel Led Chaser")
     neo.fill(0)
     neo.show()
     
 def npchaser_test(): 
-    print("Chaser test ***\n") 
- 
-    #sweep_and_stack_CW(YELLOW,BLUE,0,10,0.01)
-    #time.sleep(1)
-    #sweep(color=RED,bgcolor=0,back=False,delay=0.05,start=0,end=NUMPIXELS-1)
+    print("\nChaser test ***\n") 
+    
     sweep(neo,BLUE,RED,False,0.05,0,7)
     
     for n in range(1,5):
@@ -46,10 +37,12 @@ def npchaser_test():
     for n in range(1,5):
         one_in_n(neo,RED,BLUE,4,0.3)    
     time.sleep(2)
+ 
     sweep_and_stack(neo,YELLOW)
     sweep_and_stack(neo,GREEN,RED)
     neo.fill(0)
     neo.show()
+ 
     sweep_fill_range(neo,RED,0,3)
     sweep_fill_range(neo,YELLOW,4,7)
     sweep_fill_range(neo,GREEN,8,11)
@@ -69,10 +62,6 @@ def npchaser_test():
     sweep_fill_range(neo,PINK,4,7)
     sweep_fill_range(neo,RED,8,11)
     sweep_fill_range(neo,YELLOW,12,15)
-
-
-
-
     time.sleep(2)
     neo.fill(0)
     neo.show()
@@ -86,30 +75,29 @@ def npchaser_test():
     fill_range(neo,YELLOW,12,15)
     time.sleep(0.5)
     
-    for n in range(1,7):
-          
-        # move 1
+    for n in range(1,7):          
+        # pos 1
         fill_range(neo,YELLOW,0,3)
         fill_range(neo,BLUE,4,7)
         fill_range(neo,GREEN,8,11)
         fill_range(neo,RED,12,15)
         time.sleep(0.3)
     
-        #MOVE 2
+        # pos 2
         fill_range(neo,RED,0,3)
         fill_range(neo,YELLOW,4,7)
         fill_range(neo,BLUE,8,11)
         fill_range(neo,GREEN,12,15)
         time.sleep(0.3)
     
-        #MOVE 3
+        # pos 3
         fill_range(neo,GREEN,0,3)
         fill_range(neo,RED,4,7)
         fill_range(neo,YELLOW,8,11)
         fill_range(neo,BLUE,12,15)
         time.sleep(0.3)
     
-        #MOVE 4
+        # pos 4
         fill_range(neo,BLUE,0,3)
         fill_range(neo,GREEN,4,7)
         fill_range(neo,RED,8,11)
@@ -139,10 +127,8 @@ def npchaser_test():
     neo.show()
 
 
-
-
 def npchasery_test():
-    print("Chaser YIELD test:\n")
+    print("\nChaser YIELD test ***\n")
     for x, y in zip(y_sweep_stack_CW(neo, 0, 7, RED),y_sweep_stack(neo, 8, 15, RED)):
         neo.show()
         time.sleep(0.01)
@@ -186,6 +172,5 @@ def run():
     while True:
         npchasery_test()
         npchaser_test()
-
 
 run()
