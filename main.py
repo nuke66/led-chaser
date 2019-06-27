@@ -17,6 +17,7 @@ BLUE = (0,0,255)
 PURPLE = (153,0,153)
 WHITE = (255,255,255)
 PINK = (255,51,153)
+ORANGE = (255,140,0)
 
 def run():
     print("\nNeopixel Led Chaser")
