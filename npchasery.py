@@ -21,7 +21,7 @@ def y_fill(neo, start, end, color=(255,0,0), bgcolor=0):
 def y_sweep_stack(neo, start=0, end=NUMPIXELS, color=(255,0,0), bgcolor=0):
     for stackPos in range(end,start,-1):
         for n in range(start,stackPos+1):
-            neo[n]=color;
+            neo[n]=color
             yield n
             neo[n]=bgcolor
             yield n
