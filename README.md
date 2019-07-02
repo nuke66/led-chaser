@@ -1,5 +1,5 @@
 # led-chaser
-CircuitPython led chaser for neo pixels (RGB) 
+CircuitPython led chaser for NeoPixels (RGB) 
 
 This was a fun project to do. Working with a circle of leds made me think up more interesting patterns than I had previously with just a straight 'bar' of lights.  I also got to use generators to help solve one of the more complex sequences (npchasery.py).
 
