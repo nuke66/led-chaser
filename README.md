@@ -14,6 +14,6 @@ Sequences include:
 * y_fill (yield)
 * y_sweep_stack (yield)
 
-This was a fun project to do. Working with a circle of leds made me think up more interesting patterns than I had previously with just a straight 'bar' of lights.  I also got to use generators to help solve one of the more complex sequences (npchasery.py).
+This was a fun project to do. Working with a circle of leds made me think up more interesting patterns than I had previously with just a straight 'bar' of lights.
 
 If I get time I'll clean up the code, put it into classes, and make a .mpy library for it.
