@@ -1,0 +1,14 @@
+# Timing constants
+SHORT_DELAY = 0.1
+MEDIUM_DELAY = 0.3
+LONG_DELAY = 0.5
+
+# Colors
+RED = (255,0,0)
+YELLOW = (255,255,0)
+GREEN = (0,255,0)
+BLUE = (0,0,255)
+PURPLE = (153,0,153)
+WHITE = (255,255,255)
+PINK = (255,51,153)
+ORANGE = (255,140,0) 

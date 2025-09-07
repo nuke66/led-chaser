@@ -2,6 +2,7 @@
 import board
 import neopixel
 import time
+import keyboard
 
 from npchaser import *
 from npchasery import *
@@ -20,10 +21,24 @@ PINK = (255,51,153)
 ORANGE = (255,140,0)
 
 def run():
-    print("\nNeopixel Led Chaser")
     neo.fill(0)
     neo.show()
     
+    try:
+        while True:
+            npchasery_test()
+            npchaser_test()
+            # Allow graceful exit with Ctrl+C
+            if keyboard.is_pressed('q'):  # Requires 'keyboard' package
+                print("\nExiting program...")
+                break
+    except KeyboardInterrupt:
+        print("\nProgram terminated by user")
+    finally:
+        # Clean up resources
+        neo.fill(0)
+        neo.show()
+
 def npchaser_test(): 
     print("\nChaser test ***\n") 
     
@@ -169,9 +184,5 @@ def npchasery_test():
         neo.show()
     time.sleep(0.3)
 
-def run():
-    while True:
-        npchasery_test()
-        npchaser_test()
-
-run()
+if __name__ == "__main__":
+    run()
